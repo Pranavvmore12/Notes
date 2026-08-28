@@ -1,0 +1,8 @@
+Employee-ID,Employee-Name,Company,Location,Contact ,Gender,Designation,Method 
+24,Shrutika D,CTS,Chennai,12345,F,Associate,GET
+3,Akanksha R,Wipro,Pune,34567,F,Manager,POST
+74,Vaibhav S,TCS,Nagpur,67890,M,Sr. Manager,GET
+62,Rohit B,TCS,Nagpur,87654,M,Associate,DELETE
+57,Pranav P,Amazon,Mumbai,9876,M,PAT,POST
+51,OM U,Amazon,Pune,12389,M,Manager,DELETE
+30,Juhi D ,CTS,Hydrabad,67835,F,PA,GET
