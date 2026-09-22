@@ -1,0 +1,32 @@
+ cat props.conf
+[sn_log]
+SHOULD_LINEMERGE=FALSE
+
+[secure]
+SHOULD_LINEMERGE=FALSE
+#SEDCMD-Ladakh=s/Failed/Success/g
+SEDCMD-Munnnar=s/\d+\.\d+\.(\d+)\.(\d+)/X.X.\1.\2/g
+
+[secure]
+TRANSFORMS-ooty=nullqueuedata,indexqueuedata,extractqueuedata
+
+[root@redhat2 local]# cat transforms.conf
+[nullqueuedata]
+REGEX=.
+DEST_KEY=queue
+FORMAT=nullQueue
+
+[indexqueuedata]
+REGEX=Failed\s+password
+DEST_KEY=queue
+FORMAT=indexQueue
+
+#[extractqueuedata]
+#REGEX=Failed\s+password\s+for\s+invalid\s+user\s+(\w+)\s+from\s+(\w+\.\w+\.\d+\.\d+)\s+port\s+(\d+)\s+(\w+)
+#FORMAT=AUSER=$1 AIP=$2 APORT=$3 ASERVER=$4
+#DEST_KEY=_raw
+
+[extractqueuedata]
+REGEX=.*invalid\s+user\s+(\w+)\s+from\s+(\w+\.\w+\.\d+\.\d+)\s+port\s+(\d+)\s+(\w+)
+FORMAT=AUSER::$1 AIP::$2 APORT::$3 ASERVER::$4
+WRITE_META=true
