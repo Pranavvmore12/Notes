@@ -1,0 +1,1 @@
+I have 192.168.152.132, 133, 134, 135 as uf, hf,indexer, sh resectively. my sh is a deployment server in itself. if theres an issue in deployment , i need to toublesoot it only using analysing the logs on index=_internal host=something. so please give me all the problems that can be faced in this procedure and the troubleshooting technique only using index=_internal analysis.
